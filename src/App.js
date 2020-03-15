@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./css/style.css";
+import SwitchBtn from "./components/SwitchBtn";
+import Calculator from "./components/Calculator";
 
-function App() {
+const endsWithOperator = /[+/x-]$/,
+  isOperator = /[+-/x]/;
+
+const App = props => {
+  const [theme, setTheme] = useState("dark");
+  const [currentValue, setCurrentValue] = useState(0);
+  const [evaluated, setEvaluated] = useState(false);
+
+  const handleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  document.body.setAttribute("data-theme", theme);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <SwitchBtn theme={theme} handleTheme={handleTheme} />
+      <Calculator currentValue={currentValue} />
+    </>
   );
-}
+};
 
 export default App;

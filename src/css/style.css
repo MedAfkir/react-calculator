@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background: #edf6f9;
+  transition: 200ms;
+}
+
+#switch {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(255, 255, 255, 0.8);
+  transition: 300ms;
+  cursor: pointer;
+}
+#switch:hover, #switch:active {
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+}
+
+#calculator {
+  position: relative;
+  display: grid;
+  grid-gap: 15px;
+  width: 400px;
+  grid-template-columns: repeat(4, 1fr);
+  border-radius: 5px;
+  font-family: "Lato", sans-serif;
+}
+#calculator #display,
+#calculator p {
+  grid-column: span 4;
+}
+#calculator #display {
+  height: 100px;
+  padding: 0 15px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(255, 255, 255, 0.8);
+  transition: 200ms;
+  display: flex;
+  align-items: center;
+}
+#calculator #display > p {
+  width: 100%;
+  font-size: 20px;
+  color: #006d77;
+  text-align: right;
+  letter-spacing: 2px;
+  cursor: default;
+}
+#calculator button {
+  outline: none;
+  font-size: 20px;
+  border: none;
+  height: 50px;
+  border-radius: 5px;
+  user-select: none;
+  cursor: pointer;
+  color: #006d77;
+  background: transparent;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(255, 255, 255, 0.8);
+  transition: 200ms;
+}
+#calculator button#clear, #calculator button#zero {
+  grid-column: span 2;
+}
+#calculator button:hover, #calculator button:active {
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+  color: #006d77;
+}
+#calculator > p {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  color: #111;
+}
+#calculator > p a {
+  color: #006d77;
+  outline: none;
+}
+
+body[data-theme=dark] {
+  background: #131419;
+}
+body[data-theme=dark] #switch {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8), -2px -2px 6px rgba(255, 255, 255, 0.1);
+}
+body[data-theme=dark] #switch:hover, body[data-theme=dark] #switch:active {
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.5), inset -2px -2px 6px rgba(255, 255, 255, 0.1);
+}
+body[data-theme=dark] #calculator #display {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8), -2px -2px 6px rgba(255, 255, 255, 0.1);
+}
+body[data-theme=dark] #calculator #display > p {
+  color: #fff;
+}
+body[data-theme=dark] #calculator button {
+  color: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8), -2px -2px 6px rgba(255, 255, 255, 0.1);
+}
+body[data-theme=dark] #calculator button:hover, body[data-theme=dark] #calculator button:active {
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.5), inset -2px -2px 6px rgba(255, 255, 255, 0.1);
+}
+body[data-theme=dark] #calculator p {
+  color: #fff;
+}
+body[data-theme=dark] #calculator p a {
+  color: #006d77;
+}
+
+/*# sourceMappingURL=style.css.map */
