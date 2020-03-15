@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "./Provider";
 
-const Display = ({ result }) => {
+const Display = props => {
+  const { value } = useContext(Context);
   return (
     <div id="display">
-      <p>{result}</p>
+      <p>{value}</p>
     </div>
   );
 };

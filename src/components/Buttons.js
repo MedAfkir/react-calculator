@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "./Provider";
+import { Delete } from "react-feather";
 
-const Buttons = ({ number, operator, decimal, result, init }) => {
+const Buttons = props => {
+  const {
+    handleNumber: number,
+    handleOperator: operator,
+    handleDecimal: decimal,
+    handleResult: result,
+    deleteTheLast,
+    init
+  } = useContext(Context);
+
   return (
     <>
-      <button id="clear">C</button>
-      <button id="percent" className="operator" onClick={operator}>
-        %
+      <button id="clear" onClick={init}>
+        C
       </button>
       <button id="divide" className="operator" onClick={operator}>
         /
+      </button>
+      <button id="delete" className="delete" onClick={deleteTheLast}>
+        <Delete size={24} />
       </button>
       <button id="seven" className="operator" onClick={number}>
         7

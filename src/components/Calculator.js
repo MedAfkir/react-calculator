@@ -2,26 +2,18 @@ import React from "react";
 import Display from "./Display";
 import Buttons from "./Buttons";
 
-const Calculator = ({
-  currentValue,
-  handleOperator,
-  handleNumber,
-  handleDecimal,
-  handleResult,
-  init
-}) => {
+const Calculator = props => {
   return (
     <div id="calculator">
-      <Display result={currentValue} />
-      <Buttons
-        number={handleNumber}
-        operator={handleOperator}
-        decimal={handleDecimal}
-        result={handleResult}
-      />
+      <Display />
+      <Buttons />
       <p>
         created by&nbsp;
-        <a href="https://www.instagram.com/afkirmeed/" target="_blank">
+        <a
+          href="https://www.instagram.com/afkirmeed/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           @afkirmeed
         </a>
       </p>
